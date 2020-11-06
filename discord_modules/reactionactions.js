@@ -9,7 +9,7 @@ module.exports.run = async (bot) => {
         if (user.bot) return;
         if (!reaction.message.guild) return;
 
-        let reacJson = db.get("reactionroles", reaction.message.channel.id, reaction.message.id);
+        let reacJson = db.get("reactionactions", reaction.message.channel.id, reaction.message.id);
 
         for (var emote in reacJson) {
             if (reaction.emoji.toString() === emote) {
@@ -29,7 +29,7 @@ module.exports.run = async (bot) => {
         if (user.bot) return;
         if (!reaction.message.guild) return;
 
-        let reacJson = db.get("reactionroles", reaction.message.channel.id, reaction.message.id);
+        let reacJson = db.get("reactionactions", reaction.message.channel.id, reaction.message.id);
 
         for (var emote in reacJson) {
             if (reaction.emoji.toString() === emote) {
@@ -44,5 +44,5 @@ module.exports.run = async (bot) => {
 }
 
 module.exports.help = {
-    name: "reactionroles"
+    name: "reactionactions"
 }
