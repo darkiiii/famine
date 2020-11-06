@@ -25,6 +25,7 @@ module.exports = {
         return table;
     },
     get: function (table_name, row, column) {
+		if (!fs.existsSync('./db/' + table_name + '.json')) fs.writeFileSync('./db/' + table_name + '.json', "{}");
         let table = JSON.parse(fs.readFileSync('./db/' + table_name + '.json'));
         if (!table[row]) return false;
         if (!table[row][column]) return false;
