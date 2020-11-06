@@ -25,6 +25,7 @@ module.exports = {
         return table;
     },
     get: function (table_name, row, column) {
+		if (!fs.existsSync('./db/')) fs.mkdirSync('./db/', { recursive: true });
 		if (!fs.existsSync('./db/' + table_name + '.json')) fs.writeFileSync('./db/' + table_name + '.json', "{}");
         let table = JSON.parse(fs.readFileSync('./db/' + table_name + '.json'));
         if (!table[row]) return false;
@@ -32,6 +33,7 @@ module.exports = {
         return table[row][column];
     },
     set: function (table_name, row, column, data) {
+		if (!fs.existsSync('./db/')) fs.mkdirSync('./db/', { recursive: true });
         let table = JSON.parse(fs.readFileSync('./db/' + table_name + '.json'));
         if (!table[row]) table[row] = {};
         table[row][column] = data;
