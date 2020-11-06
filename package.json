@@ -1,0 +1,29 @@
+{
+  "name": "famine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarKiiii/famine.git"
+  },
+  "keywords": [
+    "bot",
+    "discord",
+    "js",
+    "nodejs"
+  ],
+  "author": "DarKi",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/DarKiiii/famine/issues"
+  },
+  "homepage": "https://github.com/DarKiiii/famine#readme",
+  "dependencies": {
+    "discord.js": "^12.4.1",
+    "fs": "0.0.1-security"
+  }
+}
