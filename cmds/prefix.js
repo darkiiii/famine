@@ -3,8 +3,10 @@ const db = require('../db.js');
 
 module.exports.run = async (bot, message, args) => {
     if (!args[0]) {
+        msg = await message.channel.send("Le nouveau préfixe est invalide, il n'a pas été changé");
         message.delete();
-        return message.channel.send("Le nouveau préfixe est invalide, il n'a pas été changé")
+        msg.delete({timeout: 3000});
+        return;
     };
     db.set("guilds", message.guild.id, "prefix", args[0]);
     msg = await message.channel.send("Le préfixe a été changé pour : **" + args[0] + "**");
