@@ -7,8 +7,9 @@ module.exports.run = async (bot, message, args) => {
         return message.channel.send("Le nouveau préfixe est invalide, il n'a pas été changé")
     };
     db.set("guilds", message.guild.id, "prefix", args[0]);
-    message.channel.send("Le préfixe a été changé pour : **" + args[0] + "**").delete({timeout: 3000});
+    msg = await message.channel.send("Le préfixe a été changé pour : **" + args[0] + "**");
     message.delete();
+    msg.delete({timeout: 3000});
 }
 
 module.exports.help = {
