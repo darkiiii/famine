@@ -1,0 +1,19 @@
+{
+	"mysql": {
+		"enabled": false,
+		"credentials": {
+			"host": "",
+			"port": 3306,
+			"user": "",
+			"password": "",
+			"database": ""
+		}
+	},
+	"discord":{
+		"token": "Nzc0MDA1MDkzMjMzMTk3MDY2.X6Reag.fvu8c3rdUKS5hI3ksJHC3GSF74I",
+		"default_prefix": "f!"
+	},
+	"json_db":{
+		
+	}
+}
