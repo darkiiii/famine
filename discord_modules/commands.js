@@ -19,7 +19,7 @@ module.exports.run = async (bot) => {
             console.log(`Info  | Discord    : ${f} command loaded`);
             bot.commands.set(cmd_file.help.name, cmd_file);
 			for (var i = 0; i < cmd_file.help.aliases.length; i++) {
-				bot.commands.set(cmd_file.help.aliases[i], cmd_file);
+                bot.commands.set(cmd_file.help.aliases[i], cmd_file);
 			}
         });
     });
