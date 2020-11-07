@@ -1,5 +1,4 @@
 # ignore node_modules and db files
-node_modules/
 db/
 **/config.json
 .vs/
