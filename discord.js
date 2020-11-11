@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 
 // --- Bot client creation ---
-const bot = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION"]});
+const bot = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"]});
 
 // --- Global var creation ---
 bot.default_prefix = new String();
@@ -18,9 +18,9 @@ fs.readdir("./discord_modules/", (err, files) => {
     }
     jsfiles.forEach((f, _) => {
         let mod_file = require(`./discord_modules/${f}`);
-        console.log(`Info  | Discord    : ${f} module loaded`);
-        bot.modules.set(mod_file.help.name, mod_file);
         mod_file.run(bot);
+        bot.modules.set(mod_file.help.name, mod_file);
+        console.log(`Info  | Discord    : ${f} module loaded`);
     });
 });
 

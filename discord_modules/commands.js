@@ -36,7 +36,10 @@ module.exports.run = async (bot) => {
         let args = messageArray.slice(1);
 
         let commandFile = bot.commands.get(command.slice(prefix.length));
-        if (commandFile) await commandFile.run(bot, message, args);
+        if (commandFile) {
+            await commandFile.run(bot, message, args);
+            console.log("Info  | Discord    : " + message.author.username + " used commmand " + command.slice(prefix.length));
+        }
     });
 }
 
