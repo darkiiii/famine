@@ -21,6 +21,8 @@ function json_resolve(str) {
 
 module.exports = {
     getTable: function (table_name) {
+	if (!fs.existsSync('./db/')) fs.mkdirSync('./db/', { recursive: true });
+	if (!fs.existsSync('./db/' + table_name + '.json')) fs.writeFileSync('./db/' + table_name + '.json', "{}");
         let table = JSON.parse(fs.readFileSync('./db/' + table_name + '.json'));
         return table;
     },
